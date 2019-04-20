@@ -31,6 +31,7 @@ class NotHaveEmailValidator extends \yii\validators\Validator
         if(!$this->debug) return false;
       }
     }
+    return true;
   }
 
   public function validate($value, &$error = null)
@@ -45,6 +46,7 @@ class NotHaveEmailValidator extends \yii\validators\Validator
         if(!$this->debug) return false;
       }
     }
+    return true;
   }
 
   private function generateMessage($item){

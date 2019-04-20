@@ -10,7 +10,8 @@ class BlacklistValidator extends \yii\validators\Validator
   public $blackList = [
       'SiteAnalyst',
       'SiteAdmin',
-      'Administration'
+      'Administration',
+      'admin'
   ];
 
   public function init()
@@ -23,26 +24,29 @@ class BlacklistValidator extends \yii\validators\Validator
   {
     $value = $model->$attribute;
 
-    foreach ($this->blackList as $item){
-      if(strpos($value,$item)!==false){
+    foreach ($this->blackList as $item) {
+      if (strpos($value, $item) !== false) {
         $model->addError($attribute, $this->generateMessage($item));
-        if(!$this->debug) return false;
+        if (!$this->debug) return false;
       }
     }
+    return true;
   }
 
   public function validate($value, &$error = null)
   {
-    foreach ($this->blackList as $item){
-      if(strpos($value,$item)!==false){
+    foreach ($this->blackList as $item) {
+      if (strpos($value, $item) !== false) {
         $error[] = $this->generateMessage($item);
-        if(!$this->debug) return false;
+        if (!$this->debug) return false;
       }
     }
+    return true;
   }
 
-  private function generateMessage($item){
-    if(!$this->debug) return $this->message;
-    return [$this->message,$item];
+  private function generateMessage($item)
+  {
+    if (!$this->debug) return $this->message;
+    return [$this->message, $item];
   }
 }

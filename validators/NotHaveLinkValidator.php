@@ -27,6 +27,7 @@ class NotHaveLinkValidator extends \yii\validators\Validator
       $model->addError($attribute, $this->generateMessage($item));
       if (!$this->debug) return false;
     }
+    return true;
   }
 
   public function validate($value, &$error = null)
@@ -38,6 +39,7 @@ class NotHaveLinkValidator extends \yii\validators\Validator
       $error[] = $this->generateMessage($item);
       if (!$this->debug) return false;
     }
+    return true;
   }
 
   private function generateMessage($item)

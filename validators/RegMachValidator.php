@@ -30,17 +30,19 @@ class RegMachValidator extends \yii\validators\Validator
         if (!$this->debug) return false;
       }
     }
+    return true;
   }
 
   public function validate($value, &$error = null)
   {
     foreach ($this->patternList as $item) {
       preg_match_all('/' . $item . '/m', $value, $matches);
-      if (!empty($matches)) {
+      if (!empty($matches[1])) {
         $error[] = $this->generateMessage($item, $matches[1][0]);
         if (!$this->debug) return false;
       }
     }
+    return true;
   }
 
   private function generateMessage($item, $res)
