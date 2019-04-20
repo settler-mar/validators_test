@@ -58,3 +58,6 @@ https://i.imgur.com/0nJCYsK.png
 - https://i.imgur.com/Sa2Prta.png результат произвольных тестов
 - https://i.imgur.com/PpwqWec.png Результат автотеста
 
+## Unit-test
+
+Для проверки валидаторов добавил ряд юните тестов. Запуск тестирование производится командой из консоли `vendor/bin/codecept run`
