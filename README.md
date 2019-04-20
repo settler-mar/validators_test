@@ -61,3 +61,5 @@ https://i.imgur.com/0nJCYsK.png
 ## Unit-test
 
 Для проверки валидаторов добавил ряд юните тестов. Запуск тестирование производится командой из консоли `vendor/bin/codecept run`
+
+Пример успеного юнит теста https://i.imgur.com/kMVIPZT.png
